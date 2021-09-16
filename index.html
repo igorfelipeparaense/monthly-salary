@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corebiz - Gobeyond 2021</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="title">Salário Mensal</div>
+        <div class="form">
+            <label class="label">Nome Vendedor</label>
+            <span class="errorMsg" id="erro1"></span>
+            <input type="text" class="input" id="nome">
+
+            <label class="label">Salário Fixo (R$)</label>
+            <span class="errorMsg" id="erro2"></span>
+            <input type="number" class="input" id="salFixo">
+
+            <label class="label">Total de Vendas (R$)</label>
+            <span class="errorMsg" id="erro3"></span>
+            <input type="number" class="input" id="totVendas">
+        </div>
+        <button id="calcular">Calcular</button>
+        <div class="result" id='resultado'>
+          <table id="myTable">
+            <thead>
+              <th>Nome</th>
+              <th>Salário Fixo</th>
+              <th>Tot. Vendas</th>
+              <th>Salário Final</th>
+            </thead>
+            <tbody class="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>
