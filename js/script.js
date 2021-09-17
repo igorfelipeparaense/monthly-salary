@@ -24,14 +24,13 @@ document.getElementById('calcular').addEventListener('click', (e) => {
             }
         ];
         vendedores.map(vend => {
-            let tbodyRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
-            
-            let newRow = tbodyRef.insertRow();
-            let newCellNome = newRow.insertCell();
-            let newCellSalarioFix = newRow.insertCell();
-            let newCellTotVendas = newRow.insertCell();
-            let newCellSalarioFinal = newRow.insertCell();
-    
+            const [tbodyRef] = document.getElementById('myTable').getElementsByTagName('tbody'),
+                newRow = tbodyRef.insertRow(),
+                newCellNome = newRow.insertCell(),
+                newCellSalarioFix = newRow.insertCell(),
+                newCellTotVendas = newRow.insertCell(),
+                newCellSalarioFinal = newRow.insertCell();
+        
             newCellNome.textContent = vend.nome;
             newCellSalarioFix.textContent = vend.salFixoFormat;
             newCellTotVendas.textContent = vend.totalVendasFormat;
