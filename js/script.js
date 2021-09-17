@@ -23,21 +23,21 @@ document.getElementById('calcular').addEventListener('click', (e) => {
                 salFinal
             }
         ];
-
-        let tbodyRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
-        
-        for(let i = 0; i < vendedores.length; i++) {
+        vendedores.map(vend => {
+            let tbodyRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+            
             let newRow = tbodyRef.insertRow();
             let newCellNome = newRow.insertCell();
             let newCellSalarioFix = newRow.insertCell();
             let newCellTotVendas = newRow.insertCell();
             let newCellSalarioFinal = newRow.insertCell();
+    
+            newCellNome.textContent = vend.nome;
+            newCellSalarioFix.textContent = vend.salFixoFormat;
+            newCellTotVendas.textContent = vend.totalVendasFormat;
+            newCellSalarioFinal.textContent = vend.salFinal;
+        })
 
-            newCellNome.textContent = vendedores[i].nome;
-            newCellSalarioFix.textContent = vendedores[i].salFixoFormat;
-            newCellTotVendas.textContent = vendedores[i].totalVendasFormat;
-            newCellSalarioFinal.textContent = vendedores[i].salFinal;
-        }
         clearFields();
     } else {
         document.querySelector('#erro1').textContent = "campo obrigatório*";
